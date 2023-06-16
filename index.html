@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Campina</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../furbar/assets/images/campina/logo-campina.png">
+
+    <!-- CSS
+	============================================ -->
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="assets/css/plugins/font-awesome.min.css">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/odometer.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
+    <link rel="stylesheet" href="assets/css/plugins/select2.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/ion.rangeSlider.min.css">
+    <link href="https://allfont.net/allfont.css?fonts=nunito-bold" rel="stylesheet" type="text/css" />
+
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .nav-menu li a {
+            font-family: 'nunito';
+            font-weight: 900 !important;
+            color: #2475BB !important;
+            font-size: 16px !important;
+            width: max-content;
+        }
+
+        .nav-menu .sub-menu,
+        .nav-menu .mega-sub-menu {
+            border-radius: 20px !important;
+            border: 3px solid #ffffff !important;
+            background: #2475BB !important;
+        }
+
+        .menu-title {
+            font-family: 'don-jose' !important;
+            font-weight: 900 !important;
+            border-bottom-style: dashed !important;
+        }
+
+        .nav-menu .mega-sub-menu {
+            padding: 50px !important;
+            justify-content: space-around !important;
+        }
+
+        .nav-menu .sub-menu a,
+        .nav-menu .mega-sub-menu a {
+            color: #ffffff !important;
+        }
+
+        .nav-menu .mega-sub-menu .menu-item a {
+            font-weight: 600 !important;
+        }
+
+        #products::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100%;
+            height: 600px;
+            background: url('../furbar/assets/images/campina/Vector.png');
+        }
+        #video-section::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -30px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: rgba(0, 0, 0, 0.3); */
+            mask-image: url('../furbar/assets/images/campina/vector-white-blue.png');
+            mask-size: cover;
+            -webkit-mask-image: url('../furbar/assets/images/campina/vector-white-blue.png');
+            -webkit-mask-size: cover;
+        }
+        #become-a-reseller::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -30px;
+            left: -80px;
+            width: 75px;
+            height: 84px;
+            background: url('../furbar/assets/images/campina/star-decoration-1.png');
+        }
+        #become-a-reseller::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -70px;
+            left: -10px;
+            width: 41px;
+            height: 44px;
+            background: url('../furbar/assets/images/campina/star-decoration-2.png');
+        }
+
+        .swiper .product-images::before {
+            content: '';
+            display: none;
+            background: url('../furbar/assets/images/campina/splash.png');
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .swiper .single-product-02 .product-hover-image {
+            display: none;
+        }
+
+        .swiper .single-product-02:hover .product-images::before,
+        .swiper .single-product-02:hover .product-hover-image {
+            display: block;
+        }
+
+        .swiper .single-product-02:hover img:not(.product-hover-image) {
+            display: none;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 20px;
+            background: white;
+            font-family: 'swiper-icons' !important;
+        }
+
+        .swiper-button-prev {
+            left: -50px;
+        }
+
+        .swiper-button-next {
+            right: -50px;
+        }
+
+        .swiper-button-prev::before,
+        .swiper-button-next::before {
+            display: none;
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 18px !important;
+            font-weight: bold !important;
+        }
+
+        .swiper-navigation-wrapper {
+            position: absolute;
+            bottom: 100px;
+            left: 10%;
+        }
+
+        .slider-active .swiper-button-prev,
+        .slider-active .swiper-button-next {
+            position: relative;
+            right: unset;
+            left: unset;
+        }
+    </style>
+
+    <!-- parallax -->
+    <link rel="stylesheet" href="https://codepen.io/GreenSock/pen/7ba936b34824fefdccfe2c6d9f0b740b.css">
+
+    <!-- swiper -->
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+    <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+     -->
+</head>
+
+<body>
+
+
+    <!-- Header Start  -->
+    <div class="header-area header-sticky header-white d-none d-lg-block p-0" style="margin-top:25px;margin-left:50px;margin-right:50px;border-radius: 100px;width: 95%;height: 100px;position: fixed;">
+        <div class="container position-relative">
+            <div class="row align-items-center justify-content-around position-absolute" style="top: -15px; width: 100%;">
+                <div class="col-lg-5 mt-2">
+                    <div class="header-menu">
+                        <ul class="nav-menu">
+                            <li>
+                                <a href="#">perusahaan</a>
+                                <ul class="mega-sub-menu">
+                                    <li>
+                                        <a href="#" class="menu-title">perusahaan</a>
+
+                                        <ul class="menu-item">
+                                            <li><a href="#">gambaran umum</a></li>
+                                            <li><a href="#">management</a></li>
+                                            <li><a href="#">penghargaan & sertifikasi campina</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-title">tata kelola</a>
+
+                                        <ul class="menu-item">
+                                            <li><a href="#">komite audit</a></li>
+                                            <li><a href="#">sekretaris perusahaan</a></li>
+                                            <li><a href="#">audit internal</a></li>
+                                            <li><a href="#">pedoman direksi & komisaris</a></li>
+                                            <li><a href="#">pedoman perilaku</a></li>
+                                            <li><a href="#">pernyataan independensi</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-title">investor</a>
+
+                                        <ul class="menu-item">
+                                            <li><a href="#">laporan tahunan</a></li>
+                                            <li><a href="#">laporan keberlanjutan</a></li>
+                                            <li><a href="#">laporan keuangan</a></li>
+                                            <li><a href="#">corporate presentation</a></li>
+                                            <li><a href="#">prospektur perusahaan</a></li>
+                                            <li><a href="#">RUPS</a></li>
+                                            <li><a href="#">lembaga & profesi penunjang</a></li>
+                                            <li><a href="#">pasar modal</a></li>
+                                            <li><a href="#">informasi</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">produk</a></li>
+                            <li>
+                                <a href="#">berita & event</a>
+                                <ul class="sub-menu">
+                                    <li><a href="">news</a></li>
+                                    <li><a href="">event</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <!-- Header Logo Start -->
+                    <div class="header-logo">
+                        <a href="#"><img src="assets/images/campina/logo-campina.png" height="126" alt="Logo"></a>
+                    </div>
+                    <!-- Header Logo End -->
+                </div>
+                <div class="col-lg-5 mt-2">
+                    <div class="header-menu">
+                        <ul class="nav-menu">
+                            <li>
+                                <a href="#">fun creator</a>
+                                <ul class="sub-menu">
+                                    <li><a href="">kreasi menu</a></li>
+                                    <li><a href="">games</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">kontak</a>
+                                <ul class="mega-sub-menu">
+                                    <li>
+                                        <a href="#" class="menu-title">hubungi kami</a>
+                                        <ul class="menu-item">
+                                            <li><a href="#">kantor pusat</a></li>
+                                            <li><a href="#">pemasaran, penjualan & distribusi</a></li>
+                                            <li><a href="#">hubungan investor</a></li>
+                                            <li><a href="#">cabang penjualan</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-title">layanan konsumen</a>
+                                        <ul class="menu-item">
+                                            <li><a href="#">syarat & ketentuan</a></li>
+                                            <li><a href="#">alamat & kontak</a></li>
+                                            <li><a href="#">pertanyaan & saran</a></li>
+                                            <li><a href="#">pertanyaan umum</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <a class="action" href="#" role="button" data-bs-toggle="dropdown"> <i class="pe-7s-search" style="font-size: 24px; font-weight: 900;"></i> </a>
+            
+                                    <div class="dropdown-menu dropdown-search">
+                                        <!-- Header Search Start -->
+                                        <div class="header-search">
+                                            <form action="#">
+                                                <input type="text" placeholder="Enter your search key ... ">
+                                                <button><i class="pe-7s-search"></i></button>
+                                            </form>
+                                        </div>
+                                        <!-- Header Search End -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <a class="action" href="#" role="button" data-bs-toggle="dropdown">
+                                        <i class="pe-7s-shopbag" style="font-size: 24px; font-weight: 900;"></i>
+                                    </a>
+        
+                                    <div class="dropdown-menu dropdown-cart">
+                                        <div class="cart-content" id="cart-content">
+                                            <ul>
+                                                <li>
+                                                    <!-- Single Cart Item Start -->
+                                                    <div class="single-cart-item">
+                                                        <div class="cart-thumb">
+                                                            <img src="assets/images/cart/cart-1.jpg" alt="Cart">
+                                                            <span class="product-quantity">1x</span>
+                                                        </div>
+                                                        <div class="cart-item-content">
+                                                            <h6 class="product-name">HAPPY COW</h6>
+                                                            <span class="product-price">$19.12</span>
+                                                            <div class="attributes-content">
+                                                                <span><strong>Color:</strong> White </span>
+                                                            </div>
+                                                            <a class="cart-remove" href="#"><i class="las la-times"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Single Cart Item End -->
+                                                </li>
+                                                <li>
+                                                    <!-- Single Cart Item Start -->
+                                                    <div class="single-cart-item">
+                                                        <div class="cart-thumb">
+                                                            <img src="assets/images/cart/cart-2.jpg" alt="Cart">
+                                                            <span class="product-quantity">1x</span>
+                                                        </div>
+                                                        <div class="cart-item-content">
+                                                            <h6 class="product-name">HULA HULA</h6>
+                                                            <span class="product-price">$19.12</span>
+                                                            <div class="attributes-content">
+                                                                <span><strong>Color:</strong> White </span>
+                                                            </div>
+                                                            <a class="cart-remove" href="#"><i class="las la-times"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Single Cart Item End -->
+                                                </li>
+                                                <li>
+                                                    <!-- Single Cart Item Start -->
+                                                    <div class="single-cart-item">
+                                                        <div class="cart-thumb">
+                                                            <img src="assets/images/cart/cart-3.jpg" alt="Cart">
+                                                            <span class="product-quantity">1x</span>
+                                                        </div>
+                                                        <div class="cart-item-content">
+                                                            <h6 class="product-name">CASHEW</h6>
+                                                            <span class="product-price">$19.12</span>
+                                                            <div class="attributes-content">
+                                                                <span><strong>Color:</strong> White </span>
+                                                            </div>
+                                                            <a class="cart-remove" href="#"><i class="las la-times"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Single Cart Item End -->
+                                                </li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="cart-price">
+                                            <div class="cart-subtotals">
+                                                <div class="price-inline">
+                                                    <span class="label">Subtotal</span>
+                                                    <span class="value">$42.70</span>
+                                                </div>
+                                                <div class="price-inline">
+                                                    <span class="label">Shipping</span>
+                                                    <span class="value">$7.00</span>
+                                                </div>
+                                                <div class="price-inline">
+                                                    <span class="label">Taxes</span>
+                                                    <span class="value">$0.00</span>
+                                                </div>
+                                            </div>
+                                            <div class="cart-total">
+                                                <div class="price-inline">
+                                                    <span class="label">Total</span>
+                                                    <span class="value">$49.70</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="checkout-btn">
+                                            <a href="checkout.html" class="btn btn-dark btn-hover-primary d-block">Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="px-2 ms-5"><a href="#">ID</a></li>
+                            <hr style="height: 24px; width: 2px; background: #2475BB; margin: 1.7rem 0;">
+                            <li class="px-2"><a href="#" style="color: gray !important">EN</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+    <!-- Header End -->
+
+    <!-- Header Mobile Start -->
+    <div class="header-mobile section d-lg-none">
+        <!-- Header Mobile top Start -->
+        <div class="header-mobile-top header-sticky">
+            <div class="container">
+                <div class="row row-cols-3 gx-2 align-items-center">
+                    <div class="col">
+                        <!-- Header Toggle Start -->
+                        <div class="header-toggle">
+                            <button class="mobile-menu-open">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                        <!-- Header Toggle End -->
+
+                    </div>
+                    <div class="col">
+
+                        <!-- Header Logo Start -->
+                        <div class="header-logo text-center">
+                            <a href="index.html"><img src="assets/images/logo.png" alt="Logo"></a>
+                        </div>
+                        <!-- Header Logo End -->
+
+                    </div>
+                    <div class="col">
+
+                        <!-- Header Action Start -->
+                        <div class="header-meta">
+                            <div class="dropdown">
+                                <a class="action" href="#" role="button" data-bs-toggle="dropdown"><i class="pe-7s-user"></i></a>
+
+                                <ul class="dropdown-menu dropdown-profile">
+                                    <li><a href="my-account.html">My Account</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="login.html">Sign In</a></li>
+                                </ul>
+                            </div>
+                            <a class="action" href="cart.html">
+                                <i class="pe-7s-shopbag"></i>
+                                <span class="number">3</span>
+                            </a>
+                        </div>
+                        <!-- Header Action End -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Mobile top End -->
+
+        <!-- Header Mobile Bottom End -->
+        <div class="header-mobile-bottom">
+            <div class="container">
+
+                <!-- Header Search Start -->
+                <div class="header-search">
+                    <form action="#">
+                        <input type="text" placeholder="Enter your search key ... ">
+                        <button><i class="pe-7s-search"></i></button>
+                    </form>
+                </div>
+                <!-- Header Search End -->
+
+            </div>
+        </div>
+        <!-- Header Mobile Bottom End -->
+
+    </div>
+    <!-- Header Mobile End -->
+
+   
+
+    <div class="menu-overlay"></div>
+
+    <!-- Slider Section Start -->
+    <div class="section slider-section-02">
+        <div class="slider-active">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+
+                    <!-- Single Slider Start  -->
+                    <div class="single-slider slider-02 swiper-slide animation-style-01" style="background-image: url(assets/images/campina/cashew-nut1.png);">
+                        <div class="container">
+
+                            <!-- Slider Content Start -->
+                            <!-- <div class="slider-content-02 text-center">
+                                <h2 class="title">Stylish Kitchen Furniture</h2>
+                                <p>Unique Furniture Style Design for Your Family and Welcome <br> Our Shop, 30% Offer All Stylish Kitchen Furniture</p>
+                                <a href="shop-grid-4-column.html" class="btn btn-primary btn-hover-dark">purchase now</a>
+                            </div> -->
+                            <!-- Slider Content End -->
+
+                        </div>
+                    </div>
+                    <!-- Single Slider End  -->
+
+                    <!-- Single Slider Start  -->
+                    <div class="single-slider slider-02 swiper-slide animation-style-01" style="background-image: url(assets/images/campina/cashew-nut2.png);">
+                        <div class="container">
+
+                            <!-- Slider Content Start -->
+                            <!-- <div class="slider-content-02 text-center">
+                                <h2 class="title">Stylish Kitchen Furniture</h2>
+                                <p>Unique Furniture Style Design for Your Family and Welcome <br> Our Shop, 30% Offer All Stylish Kitchen Furniture</p>
+                                <a href="shop-grid-4-column.html" class="btn btn-primary btn-hover-dark">purchase now</a>
+                            </div> -->
+                            <!-- Slider Content End -->
+
+                        </div>
+                    </div>
+                    <!-- Single Slider End  -->
+
+                    <!-- Add Arrows -->
+                    <div class="swiper-navigation-wrapper d-flex gap-2">
+                        <div class="swiper-button-prev p-0"><i class="pe-7s-angle-left fw-bold fs-2" style="color: #2475BB"></i></div>
+                        <div class="swiper-button-next p-0"><i class="pe-7s-angle-right fw-bold fs-2" style="color: #2475BB"></i></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <img src="../furbar/assets/images/campina/decoration-parallax-1.png" alt="parallax 1" class="position-absolute bottom-0 left-0 parallax-scroll" data-speed=".1" style="z-index: 2;">
+    </div>
+    <!-- Slider Section End -->
+    <div style="background-image: url('../furbar/assets/images/campina/mitra-campina.png');background-repeat: no-repeat;width:200px;top:600px;right:-70px;height: 200px;z-index: 99999;position: fixed !important;"></div>
+    
+    <!-- style=" background-image: url('../furbar/assets/images/campina/vector-white-blue.png') !important;background-repeat: no-repeat;" -->
+    <!-- New Product Section Start -->
+
+    <div id="products" class="section section-padding overflow-hidden" style=" position: relative;
+    background-image: url(../furbar/assets/images/campina/vector-white-blue.png) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    margin-top: -106px;">
+        <div class="container" style="padding-block: 100px;">
+
+            <!-- Section Title Start -->
+            <div class="section-title-02 text-center">
+                <h2 class="title" style="font-family: 'don-jose'; color: white; margin: auto;">Our Product</h2>
+            </div>
+            <!-- Section Title End -->
+
+            <!-- Product Wrapper 02 Start -->
+            <div class="product-wrapper-02">
+
+
+                <!-- Product Tabs Content Start -->
+                <div class="product-tabs-content position-relative">
+                    <!-- Slider main container -->
+                    <div class="swiper overflow-hidden">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div class="single-product-02">
+                                    <div class="product-images">
+                                        <a href="#">
+                                            <img src="assets/images/campina/neapolitan-box.png" height="175" class="center" style="max-width: 175px; object-fit: contain;" alt="product">
+                                            <img src="assets/images/campina/neapolitan-hover.png" height="175" class="center product-hover-image" style="max-width: 175px; object-fit: contain;" alt="product">
+                                        </a>
+                                    </div>
+                                    <div class="product-content">
+                                        <h4 class="title"><a href="#" class="text-white fs-4">NEAPOLITAN</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-product-02">
+                                        <div class="product-images">
+                                            <a href="#">
+                                                <img src="assets/images/campina/mochi.png" height="175" class="center" style="max-width: 175px; object-fit: contain;" alt="product">                                         
+                                                <img src="assets/images/campina/mochi-hover.png" height="175" class="center product-hover-image" style="max-width: 175px; object-fit: contain;" alt="product">
+                                            </a>                                           
+                                        </div>
+                                        <div class="product-content">
+                                            <h4 class="title"><a href="#" class="text-white fs-4">MOCHI DUO</a></h4>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-product-02">
+                                        <div class="product-images">
+                                            <a href="#">
+                                                <img src="assets/images/campina/ariel2.png" height="175" class="center" style="max-width: 175px; object-fit: contain;" alt="product">
+                                                <img src="assets/images/campina/ariel-hover.png" height="175" class="center product-hover-image" style="max-width: 175px; object-fit: contain;" alt="product">
+                                            </a>
+                                        </div>
+                                        <div class="product-content">
+                                            <h4 class="title"><a href="#" class="text-white fs-4">ARIEL</a></h4>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-product-02">
+                                        <div class="product-images">
+                                            <a href="#">
+                                                <img src="assets/images/campina/happy-cow2.png" height="175" class="center" style="max-width: 175px; object-fit: contain;" alt="product">
+                                                <img src="assets/images/campina/happy-cow-hover.png" height="175" class="center product-hover-image" style="max-width: 175px; object-fit: contain;" alt="product">
+                                            </a>
+                                        </div>
+                                        <div class="product-content">
+                                            <h4 class="title"><a href="#" class="text-white fs-4">HAPPY COW</a></h4>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-product-02">
+                                        <div class="product-images">
+                                            <a href="#">
+                                                <img src="assets/images/campina/hula-hula.png" height="175" class="center" style="max-width: 175px; object-fit: contain;" alt="product">
+                                                <img src="assets/images/campina/hula-hula-hover.png" height="175" class="center product-hover-image" style="max-width: 175px; object-fit: contain;" alt="product">
+                                            </a>
+                                        </div>
+                                        <div class="product-content">
+                                            <h4 class="title"><a href="#" class="text-white fs-4">HULA HULA</a></h4>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-product-02">
+                                        <div class="product-images">
+                                            <a href="#">
+                                                <img src="assets/images/campina/cashew2.png" height="175" class="center" style="max-width: 175px; object-fit: contain;" alt="product">
+                                                <img src="assets/images/campina/cashew-hover.png" height="175" class="center product-hover-image" style="max-width: 175px; object-fit: contain;" alt="product">
+                                            </a>
+                                        </div>
+                                        <div class="product-content">
+                                            <h4 class="title"><a href="#" class="text-white fs-4">CASHEW</a></h4>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-product-02">
+                                        <div class="product-images">
+                                            <a href="#">
+                                                <img src="assets/images/campina/frozen2.png" height="175" class="center" style="max-width: 175px; object-fit: contain;" alt="product">
+                                                <img src="assets/images/campina/frozen-hover.png" height="175" class="center product-hover-image" style="max-width: 175px; object-fit: contain;" alt="product">
+                                            </a>
+                                        </div>
+                                        <div class="product-content">
+                                            <h4 class="title"><a href="#" class="text-white fs-4">FROZEN</a></h4>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-product-02">
+                                        <div class="product-images">
+                                            <a href="#">
+                                                <img src="assets/images/campina/heart2.png" height="175" class="center" style="max-width: 175px; object-fit: contain;" alt="product">
+                                                <img src="assets/images/campina/heart-hover.png" height="175" class="center product-hover-image" style="max-width: 175px; object-fit: contain;" alt="product">
+                                            </a>
+                                        </div>
+                                        <div class="product-content">
+                                            <h4 class="title"><a href="#" class="text-white fs-4">HEART</a></h4>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+                <!-- Product Tabs Content End -->
+                
+                <div class="d-flex justify-content-center" style="margin-top: 121px">
+                    <a href="#" class="btn btn-primary btn-hover-dark btn-lg" style="padding-inline: 75px;">view all product</a>
+                </div>
+            </div>
+            <!-- Product Wrapper 02 End -->
+
+
+        </div>
+        <!-- <div class="bottom-page" style="background-image: url('../furbar/assets/images/campina/Vector.png');height: 600px;margin-top:-450px;z-index: 1;"></div> -->
+    </div>
+    
+
+    <!-- New Product Section End -->
+
+    <div class="section section-padding" style=" position: relative;
+    background-repeat: no-repeat;
+    z-index: 5;
+    margin-top: -200px;">
+        <img src="../furbar/assets/images/campina/decoration-parallax-2.png" alt="parallax 2" class="position-absolute top-0 end-0 parallax-scroll" data-speed=".1" style="z-index: 5;">
+        <img src="../furbar/assets/images/campina/decoration-parallax-3.png" alt="parallax 1" class="position-absolute bottom-0 left-0 parallax-scroll" data-speed=".1" style="z-index: 5;">
+     <!-- video section start -->
+     <div id="video-section" class="position-relative d-flex align-items-center justify-content-center" style="height: 870px; ">
+        <video playsinline autoplay muted loop poster="cake.jpg" width="100%" class="position-absolute" style="z-index: 0; mask-image: url('../furbar/assets/images/campina/vector-white-blue.png');  -webkit-mask-image: url('../furbar/assets/images/campina/vector-white-blue.png'); -webkit-mask-size: cover;">
+            <source src="../furbar/assets/videos/Campina.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="section-title-02 text-center" style="z-index: 1; width: 35%">
+            <h2 class="title mb-3" style="font-family: 'don-jose'; color: white;">bring joy happiness</h2>
+            <p class="fs-5 text-white mb-5" style="font-family: Nunito; line-height: 25px;">Kami merupakan salah satu produsen es krim ternama di Indonesia, dengan rangkaian produk yang selalu menjadi juara di hati konsumen.</p>
+            <a href="#" class="btn btn-primary btn-hover-dark btn-lg" style="padding-inline: 75px;">about us</a>
+        </div>
+    </div>
+    <!-- video section end -->
+    </div>
+   
+
+    <!-- reseller section start -->
+    <!-- <div style=" background-image: url('../furbar/assets/images/campina/vector-yellow.png') !important; background-size: cover; margin-top: -110px; padding-block: 200px;">
+        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center" style="gap: 100px; width: 50%; margin-inline: auto;">
+            <img src="../furbar/assets/images/campina/person-campina.png" alt="">
+            
+            <div id="become-a-reseller" class="position-relative">
+                <h1 class="mb-3" style="font-family: 'don-jose'; color: #3798C7; font-size: 71px; line-height: 63px;">BECOME <br> A RESELLER </h1>
+                <p class="fs-5 mb-5" style="color: #000000; font-family: Nunito; line-height: 25px;">Kami merupakan salah satu produsen es krim ternama di Indonesia, dengan rangkaian produk yang selalu menjadi juara di hati konsumen.</p>
+                <a href="#" class="btn btn-primary btn-hover-dark btn-lg" style="padding-inline: 75px;">join now</a>
+            </div>
+        </div>
+    </div> -->
+    <!-- reseller section end -->
+    
+    <!-- footer section start -->
+    <!-- <div style=" background-image: url('../furbar/assets/images/campina/vector-white.png') !important; background-size: cover; margin-top: -80px; padding-block: 145px;">
+    </div> -->
+    <!-- footer section end -->
+
+    <!-- Countdown Section Start -->
+    <div class="section section-padding overflow-hidden"  style=" position: relative;background-image: url('../furbar/assets/images/campina/vector-yellow.png') !important;background-repeat: no-repeat;background-size: cover;
+    z-index: 6;
+    margin-top: -200px; 
+    height: 700px;">
+        <img src="../furbar/assets/images/campina/decoration-parallax-4.png" alt="parallax 1" class="position-absolute bottom-0 end-0 parallax-scroll" data-speed=".1">
+        <div class="container"style="padding-block: 100px;">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6">
+                    <img src="../furbar/assets/images/campina/person-campina.png" alt="">
+                </div>
+                
+                <div class="col-lg-6">
+                    <div id="become-a-reseller" class="position-relative">
+                        <h1 class="mb-3" style="font-family: 'don-jose'; color: #3798C7; font-size: 71px; line-height: 63px;">BECOME <br> A RESELLER </h1>
+                        <p class="fs-5 mb-5" style="color: #000000; font-family: Nunito; line-height: 25px;">Kami merupakan salah satu produsen es krim ternama di Indonesia, dengan rangkaian produk yang selalu menjadi juara di hati konsumen.</p>
+                        <a href="#" class="btn btn-primary btn-hover-dark btn-lg" style="padding-inline: 75px;">join now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Countdown Section End -->
+
+  
+
+   
+
+  
+
+    <!-- Footer Section Start -->
+    <div class="section footer-section section-padding overflow-hidden" style=" position: relative;background-image: url('../furbar/assets/images/campina/vector-white-curve.png') !important;background-repeat: no-repeat;background-size: cover;
+    z-index: 8;
+    margin-top: -100px; 
+    height: 70%;">
+
+      
+        <!-- Footer Widget Section Start -->
+        <div class="footer-widget-section">
+            <img src="../furbar/assets/images/campina/logo-campina.png" width=150 height=100 alt="" style="margin-left: 150px;">
+
+            <div class="container" style="margin-top: -20px;">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6" style="width: 45%;">
+
+                        <!-- Footer Widget Start -->
+                        <div class="footer-widget">
+                            <h4 class="footer-widget-title font-nunito font-nunito-bold" style="">PT CAMPINA ICE CREAM INDUSTRY Tbk</h4>
+
+                            <ul class="footer-link font-nunito">
+                                <li>Jl. Rawa Terate 1 No. 5 Pulo Gadung, Jakarta Timur, DKI Jakarta
+                                    Phone : +62 21 4600973    | <br>  Mail : marketing@campina.co.id</li>
+                                
+                            </ul>
+                        </div>
+                        <!-- Footer Widget End -->
+
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6" style="width: 15%;">
+                        <!-- Footer Widget Start -->
+                        <div class="footer-widget">
+                            <h4 class="footer-widget-title font-nunito font-nunito-bold">FOLLOW US</h4>
+                            <ul class="footer-link" >
+                                <a href="" rel="me"><img title="veda-vit.de bei Twitter" src="../furbar/assets/images/campina/logo-instagram-rounded.png" alt="Twitter Button" width="34" height="24" />
+                                </a>
+                                <a href="" rel="me"><img title="veda-vit.de bei Facebook" src="../furbar/assets/images/campina/logo-tiktok2.png" alt="Facebook Button" width="24" height="24"  style="border-radius: 5px;"/>
+                                </a>
+                                <a href="" rel="me"><img title="veda-vit.de bei Facebook" src="../furbar/assets/images/campina/logo-youtube3.png" alt="Facebook Button" width="24" height="24"  style="border-radius: 5px;"/>
+                                </a>
+                                <a href="" rel="me"><img title="veda-vit.de bei Twitter" src="http://veda-vit.de/wp-content/uploads/2017/11/Twitter.svg" alt="Twitter Button" width="24" height="24" style="border-radius: 5px;" />
+                                </a>
+                                <a href="" rel="me"><img title="veda-vit.de bei Facebook" src="http://veda-vit.de/wp-content/uploads/2017/11/Facebook.svg" alt="Facebook Button" width="24" height="24" style="border-radius: 5px;"/>
+                                </a>
+                            </ul>
+
+                        </div>
+                        <!-- Footer Widget End -->
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-sm-6" style="width: 20%;">
+                        <!-- Footer Widget Start -->
+                        <div class="footer-widget">
+                            <h4 class="footer-widget-title font-nunito font-nunito-bold">SCAN QR CODE</h4>
+
+                            <ul class="footer-link">
+
+                            <p class="font-nunito">Dan Download Aplikasi
+                                Campina</p>
+                                </ul>
+
+                        </div>
+                        <!-- Footer Widget End -->
+                    </div>
+                   
+                    <div class="col-lg-2 col-md-4 col-sm-6" style="width: 20%;">
+                        <!-- Footer Widget Start -->
+                        <div class="footer-widget">
+                            <div style="margin-top: -10px;"> <img src="../furbar/assets/images/campina/qr-logo.png" width="200" height="200" alt=""></div>
+
+                        </div>
+                        <!-- Footer Widget End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Widget End -->
+
+        <!-- Footer Copyright End -->
+        <div class="copyright">
+            <div class="container">
+                <div class="copyright-text">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-4 col-sm-6 font-nunito text-left" style="width: 50%;">Copyright ©2023 PT Campina Ice Cream Tbk  </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 font-nunito text-right" style="width: 50%;">Legal Disclaimer | Privacy Policy | Fair Usage Policy | Cookies Policy</div>
+                  
+                    </div>
+                      <!-- <p>&copy; 2021 <span> Furbar </span> Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://hasthemes.com/" target="_blank">HasThemes</a></p> -->
+                </div>
+            </div>
+        </div>
+        <!-- Footer Copyright End -->
+
+    </div>
+    <!-- Footer Section End -->
+
+    <!--Back To Start-->
+    <a href="#" class="back-to-top">
+        <i class="pe-7s-angle-up"></i>
+    </a>
+    <!--Back To End-->
+
+
+   
+
+
+
+
+
+    <!-- JS
+    ============================================ -->
+
+    <!-- Modernizer & jQuery JS -->
+    <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="assets/js/plugins/popper.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
+
+    <!-- Plugins JS -->
+    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
+    <script src="assets/js/plugins/ajax-contact.js"></script>
+    <script src="assets/js/plugins/appear.js"></script>
+    <script src="assets/js/plugins/odometer.min.js"></script>
+    <script src="assets/js/plugins/jquery.nice-select.min.js"></script>
+    <script src="assets/js/plugins/select2.min.js"></script>
+    <script src="assets/js/plugins/ion.rangeSlider.min.js"></script>
+    <script src="assets/js/plugins/jquery.zoom.min.js"></script>
+
+    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+    <!-- <script src="assets/js/plugins.min.js"></script> -->
+
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- parallex -->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js?v=7"></script>
+
+    <script>
+        gsap.to(".parallax-scroll", {
+            scrollTrigger: {
+                scrub: true
+            }, 
+            y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
+            ease: "none"
+        });
+    </script>
+
+    <!-- swiper -->
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 4,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+</body>
+
+</html>
